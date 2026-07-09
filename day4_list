@@ -1,0 +1,62 @@
+Python List
+
+A list stores multiple values in a single variable.
+
+Create a List
+fruits = ["Apple", "Banana", "Mango"]
+print(fruits)
+
+Output:
+
+['Apple', 'Banana', 'Mango']
+Access List Items
+fruits = ["Apple", "Banana", "Mango"]
+
+print(fruits[0])  # Apple
+print(fruits[1])  # Banana
+print(fruits[2])  # Mango
+Change a List Item
+fruits = ["Apple", "Banana", "Mango"]
+
+fruits[1] = "Orange"
+print(fruits)
+
+Output:
+
+['Apple', 'Orange', 'Mango']
+Add an Item
+fruits = ["Apple", "Banana"]
+
+fruits.append("Mango")
+print(fruits)
+Remove an Item
+fruits = ["Apple", "Banana", "Mango"]
+
+fruits.remove("Banana")
+print(fruits)
+List Length
+fruits = ["Apple", "Banana", "Mango"]
+
+print(len(fruits))
+
+Output:
+
+3
+Loop Through a List
+fruits = ["Apple", "Banana", "Mango"]
+
+for fruit in fruits:
+    print(fruit)
+Practice Program
+students = ["Srinivas", "Rahul", "Anil"]
+
+print(students)
+print(students[0])
+
+students.append("Ravi")
+print(students)
+
+students.remove("Rahul")
+print(students)
+
+print(len(students))
