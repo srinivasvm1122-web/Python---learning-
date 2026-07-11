@@ -1,0 +1,77 @@
+# ==========================================
+# Dictionaries - Python Learning
+# Author: Srinivas VM
+# GitHub: srinivasvm1122-web
+# ==========================================
+
+# Dictionary = Key:Value pairs!
+# Like contact book — name:number
+
+# ── CREATE ──
+student = {
+    "name": "Srinivas",
+    "age": 20,
+    "city": "Tumkur",
+    "course": "BCA",
+    "is_student": True
+}
+print("Dictionary:", student)
+
+# ── ACCESS ──
+print("\nName:", student["name"])
+print("Age:", student["age"])
+print("City:", student.get("city"))
+print("Phone:", student.get("phone", "Not found"))  # Default value
+
+# ── UPDATE ──
+student["age"] = 21           # Existing key update
+student["github"] = "srinivasvm1122-web"  # New key add
+print("\nUpdated:", student)
+
+# ── DELETE ──
+del student["is_student"]     # Delete key
+removed = student.pop("city") # Pop returns value
+print("\nRemoved city:", removed)
+print("After delete:", student)
+
+# ── METHODS ──
+info = {
+    "name": "Srinivas",
+    "skills": ["Python", "ML"],
+    "year": 2026
+}
+
+print("\nKeys:", list(info.keys()))
+print("Values:", list(info.values()))
+print("Items:", list(info.items()))
+
+# ── LOOP ──
+print("\n── Loop through dictionary ──")
+for key, value in info.items():
+    print(f"{key} → {value}")
+
+# ── CHECK ──
+print("\n'name' in info?", "name" in info)    # True
+print("'phone' in info?", "phone" in info)  # False
+
+# ── NESTED DICTIONARY ──
+students = {
+    "student1": {
+        "name": "Srinivas",
+        "marks": 85
+    },
+    "student2": {
+        "name": "Chandan",
+        "marks": 90
+    }
+}
+print("\nNested Dict:")
+print(students["student1"]["name"])   # Srinivas
+print(students["student2"]["marks"])  # 90
+
+# ── COMPARISON ──
+print("\n── All Collections Summary ──")
+print("List   = [1,2,3]        → Ordered, Changeable")
+print("Tuple  = (1,2,3)        → Ordered, NOT changeable")
+print("Set    = {1,2,3}        → Unique items only")
+print("Dict   = {'key':'val'}  → Key:Value pairs")
