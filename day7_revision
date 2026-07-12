@@ -1,0 +1,88 @@
+# ==========================================
+# Revision - All Topics
+# Author: Srinivas VM
+# GitHub: srinivasvm1122-web
+# ==========================================
+
+# ── 1. PRINT & ESCAPE SEQUENCES ──
+print("Hello World!")
+print("Name:\tSrinivas")
+print("City:\tTumkur")
+print("Line1\nLine2")
+
+# ── 2. DATA TYPES ──
+name = "Srinivas"        # str
+age = 20                 # int
+height = 5.9             # float
+is_student = True        # bool
+
+print("\n── Data Types ──")
+print(type(name))        # str
+print(type(age))         # int
+print(type(height))      # float
+print(type(is_student))  # bool
+
+# ── 3. STRING METHODS ──
+print("\n── Strings ──")
+course = "bca student"
+print(course.upper())        # BCA STUDENT
+print(course.capitalize())   # Bca student
+print(course.replace("bca", "AI/ML"))
+print(len(course))
+print(course[0:3])           # bca
+
+# ── 4. LISTS ──
+print("\n── Lists ──")
+skills = ["Python", "ML", "GitHub"]
+skills.append("Deep Learning")
+skills.insert(1, "Maths")
+print(skills)
+print(skills[0])
+print(len(skills))
+skills.remove("Maths")
+print(skills)
+
+# ── 5. TUPLES ──
+print("\n── Tuples ──")
+person = ("Srinivas", 20, "Tumkur")
+print(person)
+print(person[0])
+name, age, city = person    # Unpacking
+print(f"Name:{name}, Age:{age}, City:{city}")
+
+# ── 6. SETS ──
+print("\n── Sets ──")
+my_set = {1, 2, 3, 3, 4, 4, 5}
+print(my_set)               # Duplicates gone!
+my_set.add(6)
+my_set.discard(1)
+print(my_set)
+
+a = {1, 2, 3, 4}
+b = {3, 4, 5, 6}
+print("Union:", a | b)
+print("Intersection:", a & b)
+print("Difference:", a - b)
+
+# ── 7. DICTIONARIES ──
+print("\n── Dictionaries ──")
+student = {
+    "name": "Srinivas",
+    "age": 20,
+    "course": "BCA",
+    "skills": ["Python", "ML"]
+}
+print(student["name"])
+print(student.get("age"))
+student["github"] = "srinivasvm1122-web"
+print(student)
+
+for key, value in student.items():
+    print(f"{key} → {value}")
+
+# ── SUMMARY ──
+print("\n── Collections Summary ──")
+print("List  = [] → Ordered, Changeable, Duplicates OK")
+print("Tuple = () → Ordered, NOT changeable")
+print("Set   = {} → Unique items only")
+print("Dict  = {} → Key:Value pairs")
