@@ -1,0 +1,79 @@
+
+# Control Structures - If, Elif, Else
+
+# ── 1. SIMPLE IF ──
+age = 20
+if age >= 18:
+    print("You are an adult!")
+
+# ── 2. IF ELSE ──
+marks = 45
+if marks >= 50:
+    print("Pass!")
+else:
+    print("Fail!")
+
+# ── 3. IF ELIF ELSE ──
+score = 75
+
+if score >= 90:
+    print("Grade: A")
+elif score >= 80:
+    print("Grade: B")
+elif score >= 70:
+    print("Grade: C")
+elif score >= 60:
+    print("Grade: D")
+else:
+    print("Grade: F - Fail!")
+
+# ── 4. NESTED IF ──
+age = 20
+has_id = True
+
+if age >= 18:
+    if has_id:
+        print("Entry allowed!")
+    else:
+        print("No ID - Entry not allowed!")
+else:
+    print("Too young!")
+
+# ── 5. REAL EXAMPLES ──
+
+# ATM example
+balance = 5000
+withdraw = 3000
+
+if withdraw > balance:
+    print("Insufficient balance!")
+elif withdraw <= 0:
+    print("Invalid amount!")
+else:
+    balance = balance - withdraw
+    print(f"Withdrawn: {withdraw}")
+    print(f"Remaining balance: {balance}")
+
+# Student grade example
+name = "Srinivas"
+cgpa = 7.1
+
+if cgpa >= 9.0:
+    print(f"{name} - Outstanding!")
+elif cgpa >= 8.0:
+    print(f"{name} - Excellent!")
+elif cgpa >= 7.0:
+    print(f"{name} - Good!")
+elif cgpa >= 6.0:
+    print(f"{name} - Average!")
+else:
+    print(f"{name} - Need improvement!")
+
+# AI/ML eligibility check
+python_done = True
+math_done = False
+projects = 2
+
+if python_done and math_done and projects >= 2:
+    print("Ready for ML job!")
+elif python_done and
