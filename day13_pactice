@@ -1,0 +1,183 @@
+# ============================================
+# Student Management System
+# Author : Srinivas
+# Language : Python
+# ============================================
+
+students = []
+
+def add_student():
+    print("\n------ Add Student ------")
+    name = input("Enter Student Name: ")
+    usn = input("Enter Student USN: ")
+    age = int(input("Enter Age: "))
+    course = input("Enter Course: ")
+
+    marks = []
+    for i in range(1, 6):
+        mark = float(input(f"Enter Subject {i} Marks: "))
+        marks.append(mark)
+
+    total = sum(marks)
+    average = total / len(marks)
+
+    if average >= 90:
+        grade = "A+"
+    elif average >= 80:
+        grade = "A"
+    elif average >= 70:
+        grade = "B"
+    elif average >= 60:
+        grade = "C"
+    elif average >= 50:
+        grade = "D"
+    else:
+        grade = "F"
+
+    student = {
+        "Name": name,
+        "USN": usn,
+        "Age": age,
+        "Course": course,
+        "Marks": marks,
+        "Total": total,
+        "Average": average,
+        "Grade": grade
+    }
+
+    students.append(student)
+
+    print("\nStudent Added Successfully!\n")
+
+
+def view_students():
+    print("\n------ Student Records ------")
+
+    if len(students) == 0:
+        print("No Students Found.")
+        return
+
+    for i, student in enumerate(students, start=1):
+        print(f"\nStudent {i}")
+        print("-" * 30)
+        print("Name     :", student["Name"])
+        print("USN      :", student["USN"])
+        print("Age      :", student["Age"])
+        print("Course   :", student["Course"])
+        print("Marks    :", student["Marks"])
+        print("Total    :", student["Total"])
+        print("Average  :", round(student["Average"],2))
+        print("Grade    :", student["Grade"])
+
+
+def search_student():
+    print("\n------ Search Student ------")
+    usn = input("Enter USN: ")
+
+    found = False
+
+    for student in students:
+        if student["USN"] == usn:
+            found = True
+            print("\nStudent Found")
+            print("---------------------------")
+            print("Name :", student["Name"])
+            print("USN :", student["USN"])
+            print("Age :", student["Age"])
+            print("Course :", student["Course"])
+            print("Marks :", student["Marks"])
+            print("Average :", round(student["Average"],2))
+            print("Grade :", student["Grade"])
+
+    if not found:
+        print("Student Not Found.")
+
+
+def update_student():
+    print("\n------ Update Student ------")
+    usn = input("Enter USN: ")
+
+    for student in students:
+        if student["USN"] == usn:
+
+            print("Student Found.")
+
+            student["Name"] = input("New Name: ")
+            student["Age"] = int(input("New Age: "))
+            student["Course"] = input("New Course: ")
+
+            print("Updated Successfully.")
+            return
+
+    print("Student Not Found.")
+
+
+def delete_student():
+    print("\n------ Delete Student ------")
+    usn = input("Enter USN: ")
+
+    for student in students:
+        if student["USN"] == usn:
+            students.remove(student)
+            print("Deleted Successfully.")
+            return
+
+    print("Student Not Found.")
+
+
+def statistics():
+
+    if len(students) == 0:
+        print("No Data Available.")
+        return
+
+    highest = max(students, key=lambda x: x["Average"])
+    lowest = min(students, key=lambda x: x["Average"])
+
+    print("\n------ Statistics ------")
+    print("Total Students :", len(students))
+    print("Topper :", highest["Name"])
+    print("Highest Average :", round(highest["Average"],2))
+    print("Lowest Student :", lowest["Name"])
+    print("Lowest Average :", round(lowest["Average"],2))
+
+
+while True:
+
+    print("\n===================================")
+    print(" STUDENT MANAGEMENT SYSTEM ")
+    print("===================================")
+    print("1. Add Student")
+    print("2. View Students")
+    print("3. Search Student")
+    print("4. Update Student")
+    print("5. Delete Student")
+    print("6. Statistics")
+    print("7. Exit")
+
+    choice = input("Enter Choice: ")
+
+    if choice == "1":
+        add_student()
+
+    elif choice == "2":
+        view_students()
+
+    elif choice == "3":
+        search_student()
+
+    elif choice == "4":
+        update_student()
+
+    elif choice == "5":
+        delete_student()
+
+    elif choice == "6":
+        statistics()
+
+    elif choice == "7":
+        print("Thank You!")
+        break
+
+    else:
+        print("Invalid Choice.")
