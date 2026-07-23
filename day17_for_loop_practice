@@ -1,0 +1,67 @@
+# ==========================================
+# FOR LOOP PRACTICE
+# ==========================================
+
+
+# 1. Print numbers from 1 to 10
+print("Numbers from 1 to 10:")
+
+for i in range(1, 11):
+    print(i)
+
+
+# 2. Print even numbers from 1 to 20
+print("\nEven numbers from 1 to 20:")
+
+for i in range(1, 21):
+    if i % 2 == 0:
+        print(i)
+
+
+# 3. Print odd numbers from 1 to 20
+print("\nOdd numbers from 1 to 20:")
+
+for i in range(1, 21):
+    if i % 2 != 0:
+        print(i)
+
+
+# 4. Print multiplication table
+print("\nMultiplication Table of 5:")
+
+for i in range(1, 11):
+    print("5 x", i, "=", 5 * i)
+
+
+# 5. Print fruits from a list
+print("\nFruits List:")
+
+fruits = ["Apple", "Mango", "Banana", "Orange", "Grapes"]
+
+for fruit in fruits:
+    print(fruit)
+
+
+# 6. Calculate the sum of numbers from 1 to 10
+print("\nSum of numbers from 1 to 10:")
+
+total = 0
+
+for i in range(1, 11):
+    total = total + i
+
+print("Total =", total)
+
+
+# 7. Print numbers in reverse order
+print("\nNumbers from 10 to 1:")
+
+for i in range(10, 0, -1):
+    print(i)
+
+
+# 8. Print squares of numbers from 1 to 5
+print("\nSquares of numbers:")
+
+for i in range(1, 6):
+    print(i, "x", i, "=", i * i)
