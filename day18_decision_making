@@ -1,0 +1,138 @@
+# ==========================================
+# DECISION MAKING STATEMENTS PRACTICE
+# ==========================================
+
+
+# 1. IF STATEMENT
+print("1. IF STATEMENT")
+
+age = 20
+
+if age >= 18:
+    print("You are an adult")
+
+
+# 2. IF-ELSE STATEMENT
+print("\n2. IF-ELSE STATEMENT")
+
+marks = 75
+
+if marks >= 35:
+    print("You passed")
+else:
+    print("You failed")
+
+
+# 3. IF-ELIF-ELSE STATEMENT
+print("\n3. IF-ELIF-ELSE STATEMENT")
+
+score = 82
+
+if score >= 90:
+    print("Grade A+")
+elif score >= 75:
+    print("Grade A")
+elif score >= 60:
+    print("Grade B")
+elif score >= 35:
+    print("Grade C")
+else:
+    print("Fail")
+
+
+# 4. CHECK EVEN OR ODD
+print("\n4. EVEN OR ODD")
+
+number = 10
+
+if number % 2 == 0:
+    print("The number is Even")
+else:
+    print("The number is Odd")
+
+
+# 5. CHECK POSITIVE OR NEGATIVE
+print("\n5. POSITIVE OR NEGATIVE")
+
+number = -5
+
+if number > 0:
+    print("The number is Positive")
+elif number < 0:
+    print("The number is Negative")
+else:
+    print("The number is Zero")
+
+
+# 6. BIGGEST OF TWO NUMBERS
+print("\n6. BIGGEST OF TWO NUMBERS")
+
+a = 25
+b = 40
+
+if a > b:
+    print("A is bigger")
+elif b > a:
+    print("B is bigger")
+else:
+    print("Both are equal")
+
+
+# 7. NESTED IF STATEMENT
+print("\n7. NESTED IF STATEMENT")
+
+age = 20
+has_id = True
+
+if age >= 18:
+    if has_id:
+        print("Entry Allowed")
+    else:
+        print("ID is required")
+else:
+    print("Entry Not Allowed")
+
+
+# 8. CHECK VOTING ELIGIBILITY
+print("\n8. VOTING ELIGIBILITY")
+
+age = 19
+
+if age >= 18:
+    print("You can vote")
+else:
+    print("You cannot vote")
+
+
+# 9. SIMPLE LOGIN SYSTEM
+print("\n9. SIMPLE LOGIN SYSTEM")
+
+username = "srinivas"
+password = "12345"
+
+if username == "srinivas":
+    if password == "12345":
+        print("Login Successful")
+    else:
+        print("Wrong Password")
+else:
+    print("Wrong Username")
+
+
+# 10. STUDENT RESULT
+print("\n10. STUDENT RESULT")
+
+marks = 85
+
+if marks >= 35:
+    print("Result: Pass")
+
+    if marks >= 75:
+        print("Performance: Excellent")
+    elif marks >= 60:
+        print("Performance: Good")
+    else:
+        print("Performance: Average")
+
+else:
+    print("Result: Fail")
