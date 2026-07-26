@@ -1,0 +1,45 @@
+# Decision Making Practice
+# Student Grade Calculator
+
+print("================================")
+print("     STUDENT GRADE CALCULATOR")
+print("================================")
+
+name = input("Enter student name: ")
+marks = int(input("Enter your marks: "))
+
+if marks >= 90:
+    grade = "A+"
+    message = "Excellent Performance"
+
+elif marks >= 80:
+    grade = "A"
+    message = "Very Good Performance"
+
+elif marks >= 70:
+    grade = "B"
+    message = "Good Performance"
+
+elif marks >= 60:
+    grade = "C"
+    message = "Average Performance"
+
+elif marks >= 35:
+    grade = "D"
+    message = "You Passed"
+
+else:
+    grade = "F"
+    message = "You Failed"
+
+
+print("\n================================")
+print("          RESULT")
+print("================================")
+
+print("Student Name :", name)
+print("Marks        :", marks)
+print("Grade        :", grade)
+print("Message      :", message)
+
+print("================================")
