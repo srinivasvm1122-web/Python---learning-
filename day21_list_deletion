@@ -1,0 +1,18 @@
+# List Deletion Practice
+
+students = ["Raki", "Ravi", "Ambani", "Kiran", "Rahul"]
+
+print("Original List:")
+print(students)
+
+# Delete element using index
+del students[1]
+
+print("\nAfter deleting index 1:")
+print(students)
+
+# Delete another element
+del students[2]
+
+print("\nAfter deleting index 2:")
+print(students)
