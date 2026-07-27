@@ -1,0 +1,133 @@
+# ==========================================
+#       STUDENT MANAGEMENT SYSTEM
+# ==========================================
+
+students = [
+    "Srinivas",
+    "Ravi",
+    "Raki",
+    "Kiran",
+    "Rahul"
+]
+
+while True:
+
+    print("\n===================================")
+    print("       STUDENT MANAGEMENT SYSTEM")
+    print("===================================")
+
+    print("1. Display Students")
+    print("2. Add Student")
+    print("3. Delete Student")
+    print("4. Search Student")
+    print("5. Exit")
+
+    choice = int(input("\nEnter your choice: "))
+
+    # --------------------------------------
+    # 1. Display Students
+    # --------------------------------------
+
+    if choice == 1:
+
+        print("\n----- STUDENT LIST -----")
+
+        if len(students) == 0:
+            print("No students available.")
+
+        else:
+            for i in range(len(students)):
+                print(i, "-", students[i])
+
+
+    # --------------------------------------
+    # 2. Add Student
+    # --------------------------------------
+
+    elif choice == 2:
+
+        name = input("\nEnter student name: ")
+
+        students.append(name)
+
+        print("\nStudent added successfully!")
+        print("Updated List:", students)
+
+
+    # --------------------------------------
+    # 3. Delete Student
+    # --------------------------------------
+
+    elif choice == 3:
+
+        print("\n----- STUDENT LIST -----")
+
+        if len(students) == 0:
+            print("No students available.")
+
+        else:
+
+            for i in range(len(students)):
+                print(i, "-", students[i])
+
+            index = int(input("\nEnter index number to delete: "))
+
+            if index >= 0 and index < len(students):
+
+                deleted_student = students[index]
+
+                del students[index]
+
+                print(
+                    "\nStudent deleted successfully:",
+                    deleted_student
+                )
+
+                print("Updated List:", students)
+
+            else:
+                print("\nInvalid index!")
+
+
+    # --------------------------------------
+    # 4. Search Student
+    # --------------------------------------
+
+    elif choice == 4:
+
+        search_name = input(
+            "\nEnter student name to search: "
+        )
+
+        if search_name in students:
+            print(
+                "\nStudent found:",
+                search_name
+            )
+
+        else:
+            print(
+                "\nStudent not found."
+            )
+
+
+    # --------------------------------------
+    # 5. Exit
+    # --------------------------------------
+
+    elif choice == 5:
+
+        print("\nThank you for using")
+        print("Student Management System!")
+
+        break
+
+
+    # --------------------------------------
+    # Invalid Choice
+    # --------------------------------------
+
+    else:
+
+        print("\nInvalid choice!")
+        print("Please enter a number between 1 and 5.")
