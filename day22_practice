@@ -1,0 +1,149 @@
+# ==========================================
+#       STUDENT LIST MANAGEMENT SYSTEM
+# ==========================================
+
+students = [
+    "Srinivas",
+    "Ravi",
+    "Raki",
+    "Kiran",
+    "Rahul"
+]
+
+while True:
+
+    print("\n===================================")
+    print("      STUDENT LIST MANAGEMENT")
+    print("===================================")
+
+    print("1. Display Students")
+    print("2. Add Student")
+    print("3. Remove Student by Name")
+    print("4. Delete Student by Index")
+    print("5. Remove Last Student")
+    print("6. Clear All Students")
+    print("7. Exit")
+
+    choice = int(input("\nEnter your choice: "))
+
+    # Display Students
+    if choice == 1:
+
+        print("\n----- STUDENT LIST -----")
+
+        if len(students) == 0:
+            print("No students available.")
+
+        else:
+            for i in range(len(students)):
+                print(i, "-", students[i])
+
+
+    # Add Student
+    elif choice == 2:
+
+        name = input("\nEnter student name: ")
+
+        students.append(name)
+
+        print("\nStudent added successfully!")
+        print("Updated List:", students)
+
+
+    # Remove Student by Name
+    elif choice == 3:
+
+        name = input("\nEnter student name to remove: ")
+
+        if name in students:
+
+            students.remove(name)
+
+            print("\nStudent removed successfully!")
+            print("Updated List:", students)
+
+        else:
+
+            print("\nStudent not found!")
+
+
+    # Delete Student by Index
+    elif choice == 4:
+
+        if len(students) == 0:
+
+            print("\nNo students available.")
+
+        else:
+
+            print("\n----- STUDENT LIST -----")
+
+            for i in range(len(students)):
+                print(i, "-", students[i])
+
+            index = int(input("\nEnter index to delete: "))
+
+            if index >= 0 and index < len(students):
+
+                deleted_student = students[index]
+
+                del students[index]
+
+                print(
+                    "\nDeleted Student:",
+                    deleted_student
+                )
+
+                print("Updated List:", students)
+
+            else:
+
+                print("\nInvalid index!")
+
+
+    # Remove Last Student
+    elif choice == 5:
+
+        if len(students) == 0:
+
+            print("\nNo students available.")
+
+        else:
+
+            removed_student = students.pop()
+
+            print(
+                "\nRemoved Student:",
+                removed_student
+            )
+
+            print("Updated List:", students)
+
+
+    # Clear All Students
+    elif choice == 6:
+
+        students.clear()
+
+        print("\nAll students have been removed.")
+
+        print("Updated List:", students)
+
+
+    # Exit
+    elif choice == 7:
+
+        print("\nThank you for using")
+        print("Student List Management System!")
+
+        break
+
+
+    # Invalid Choice
+    else:
+
+        print("\nInvalid choice!")
+
+        print(
+            "Please enter a number between 1 and 7."
+        )
