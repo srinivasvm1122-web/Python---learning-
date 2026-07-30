@@ -1,0 +1,47 @@
+# ==========================================
+#        PYTHON LIST METHODS PRACTICE
+# ==========================================
+
+students = ["Srinivas", "Ravi", "Raki", "Kiran"]
+
+print("Original List:")
+print(students)
+
+# Add a new student
+students.append("Rahul")
+print("\nAfter append():")
+print(students)
+
+# Insert student at a specific position
+students.insert(1, "Arjun")
+print("\nAfter insert():")
+print(students)
+
+# Remove student by value
+students.remove("Ravi")
+print("\nAfter remove():")
+print(students)
+
+# Remove student by index
+students.pop(2)
+print("\nAfter pop():")
+print(students)
+
+# Delete student using index
+del students[1]
+print("\nAfter del:")
+print(students)
+
+# Check whether a student exists
+if "Srinivas" in students:
+    print("\nSrinivas is available in the list.")
+else:
+    print("\nSrinivas is not available in the list.")
+
+# Display students using for loop
+print("\nFinal Student List:")
+
+for i in range(len(students)):
+    print(i, "-", students[i])
+
+print("\nTotal Students:", len(students))
