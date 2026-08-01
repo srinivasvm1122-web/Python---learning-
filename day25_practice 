@@ -1,0 +1,53 @@
+# ======================================
+#      BANK ACCOUNT MANAGEMENT SYSTEM
+# ======================================
+
+balance = 10000
+
+while True:
+
+    print("\n==============================")
+    print("   BANK ACCOUNT SYSTEM")
+    print("==============================")
+    print("1. Check Balance")
+    print("2. Deposit Money")
+    print("3. Withdraw Money")
+    print("4. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        print(f"\nCurrent Balance: ₹{balance}")
+
+    elif choice == 2:
+
+        amount = float(input("Enter deposit amount: ₹"))
+
+        if amount > 0:
+            balance += amount
+            print("Deposit Successful!")
+            print(f"Updated Balance: ₹{balance}")
+        else:
+            print("Invalid amount!")
+
+    elif choice == 3:
+
+        amount = float(input("Enter withdrawal amount: ₹"))
+
+        if amount <= 0:
+            print("Invalid amount!")
+
+        elif amount > balance:
+            print("Insufficient Balance!")
+
+        else:
+            balance -= amount
+            print("Withdrawal Successful!")
+            print(f"Remaining Balance: ₹{balance}")
+
+    elif choice == 4:
+        print("\nThank You for Using Bank Account System!")
+        break
+
+    else:
+        print("Invalid Choice! Please try again.")
