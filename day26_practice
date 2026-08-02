@@ -1,0 +1,41 @@
+# Python Practice - Day 26
+
+print("=== Python Practice Day 26 ===")
+
+# Example 1: if-elif-else
+marks = 75
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 60:
+    print("Grade B")
+elif marks >= 35:
+    print("Grade C")
+else:
+    print("Fail")
+
+print()
+
+# Example 2: Nested if
+age = 20
+license = "yes"
+
+if age >= 18:
+    print("Eligible to Drive")
+
+    if license == "yes":
+        print("Driving Allowed")
+    else:
+        print("Get a Driving License")
+else:
+    print("Not Eligible")
+
+print()
+
+# Example 3: Voting Eligibility
+age = 17
+
+if age >= 18:
+    print("Eligible to Vote")
+else:
+    print("Not Eligible to Vote")
