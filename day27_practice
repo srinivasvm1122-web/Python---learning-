@@ -1,0 +1,40 @@
+# ==============================
+# College Admission System
+# Day 27 Python Practice
+# ==============================
+
+print("===== College Admission System =====")
+
+name = input("Enter Student Name: ")
+age = int(input("Enter Age: "))
+marks = int(input("Enter Marks: "))
+
+if age >= 18:
+
+    print("\nAge Verification: Passed")
+
+    if marks >= 90:
+        print("Congratulations", name)
+        print("Admission Confirmed")
+        print("Scholarship: 100%")
+
+    elif marks >= 75:
+        print("Congratulations", name)
+        print("Admission Confirmed")
+        print("Scholarship: 50%")
+
+    elif marks >= 35:
+        print("Congratulations", name)
+        print("Admission Confirmed")
+        print("No Scholarship")
+
+    else:
+        print(name)
+        print("Admission Rejected")
+        print("Reason: Low Marks")
+
+else:
+    print("\nAdmission Rejected")
+    print("Reason: Age must be 18 or above")
+
+print("\nThank You!")
