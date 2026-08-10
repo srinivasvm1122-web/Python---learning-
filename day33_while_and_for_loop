@@ -1,0 +1,56 @@
+
+
+students = []
+
+while True:
+    print("\n===== MENU =====")
+    print("1. Add Student")
+    print("2. View Students")
+    print("3. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        name = input("Enter student name: ")
+
+        marks = []
+        print("Enter 5 subject marks:")
+
+        # FOR LOOP
+        for i in range(1, 6):
+            mark = int(input(f"Subject {i}: "))
+            marks.append(mark)
+
+        total = sum(marks)
+        average = total / 5
+
+        students.append({
+            "name": name,
+            "marks": marks,
+            "total": total,
+            "average": average
+        })
+
+        print("Student added successfully!")
+
+    elif choice == "2":
+
+        if len(students) == 0:
+            print("No student records found.")
+        else:
+            print("\n===== STUDENT DETAILS =====")
+
+            # FOR LOOP
+            for student in students:
+                print("----------------------------")
+                print("Name:", student["name"])
+                print("Marks:", student["marks"])
+                print("Total:", student["total"])
+                print("Average:", student["average"])
+
+    elif choice == "3":
+        print("Thank you!")
+        break
+
+    else:
+        print("Invalid choice.")
