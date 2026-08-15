@@ -1,0 +1,104 @@
+# ==========================================
+# PYTHON FOR LOOP PRACTICE
+# ==========================================
+
+# 1. Basic for loop
+print("1. Numbers from 1 to 10")
+
+for i in range(1, 11):
+    print(i)
+
+
+# 2. Looping over a string
+print("\n2. Characters in a string")
+
+name = "Python"
+
+for character in name:
+    print(character)
+
+
+# 3. Looping over a string with condition
+print("\n3. Vowels in a string")
+
+word = "programming"
+
+for character in word:
+    if character in "aeiou":
+        print(character)
+
+
+# 4. for loop with else
+print("\n4. For loop with else")
+
+for i in range(1, 6):
+    print(i)
+else:
+    print("Loop completed successfully")
+
+
+# 5. for...else with search
+print("\n5. Search using for...else")
+
+numbers = [10, 20, 30, 40, 50]
+search = 30
+
+for number in numbers:
+    if number == search:
+        print("Number found:", number)
+        break
+else:
+    print("Number not found")
+
+
+# 6. Nested loop
+print("\n6. Nested loop")
+
+for i in range(1, 4):
+    for j in range(1, 4):
+        print("i =", i, "j =", j)
+
+
+# 7. Multiplication table using nested loop
+print("\n7. Multiplication tables")
+
+for i in range(1, 4):
+    print("\nTable:", i)
+
+    for j in range(1, 11):
+        print(i, "x", j, "=", i * j)
+
+
+# 8. Pattern using nested loop
+print("\n8. Star pattern")
+
+for i in range(1, 6):
+    for j in range(i):
+        print("*", end=" ")
+    print()
+
+
+# 9. Loop through words
+print("\n9. Loop through words")
+
+sentence = "I am learning Python"
+
+words = sentence.split()
+
+for word in words:
+    print(word)
+
+
+# 10. Nested loop with strings
+print("\n10. Characters of multiple words")
+
+names = ["Python", "Java", "C++"]
+
+for name in names:
+    print("\n", name)
+
+    for character in name:
+        print(character)
+
+
+print("\nAll programs completed!")
