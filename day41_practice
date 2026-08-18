@@ -1,0 +1,124 @@
+import random
+import math
+
+
+def calculator():
+    print("\n--- CALCULATOR ---")
+
+    try:
+        a = float(input("First number: "))
+        op = input("Operator (+ - * /): ")
+        b = float(input("Second number: "))
+
+        if op == "+":
+            print("Answer:", a + b)
+        elif op == "-":
+            print("Answer:", a - b)
+        elif op == "*":
+            print("Answer:", a * b)
+        elif op == "/":
+            if b == 0:
+                print("Cannot divide by zero.")
+            else:
+                print("Answer:", a / b)
+        else:
+            print("Invalid operator.")
+
+    except ValueError:
+        print("Please enter valid numbers.")
+
+
+def guessing_game():
+    print("\n--- NUMBER GUESSING GAME ---")
+
+    secret = random.randint(1, 100)
+    attempts = 0
+
+    print("Guess a number from 1 to 100.")
+
+    while True:
+        try:
+            guess = int(input("Your guess: "))
+            attempts += 1
+
+            if guess < secret:
+                print("Too low!")
+            elif guess > secret:
+                print("Too high!")
+            else:
+                print(f"Correct! Attempts: {attempts}")
+                break
+
+        except ValueError:
+            print("Enter a valid number.")
+
+
+def prime_checker():
+    print("\n--- PRIME NUMBER CHECKER ---")
+
+    try:
+        number = int(input("Enter a number: "))
+
+        if number < 2:
+            print("Not a prime number.")
+            return
+
+        for i in range(2, math.isqrt(number) + 1):
+            if number % i == 0:
+                print("Not a prime number.")
+                return
+
+        print("Prime number!")
+
+    except ValueError:
+        print("Enter a whole number.")
+
+
+def multiplication_table():
+    print("\n--- MULTIPLICATION TABLE ---")
+
+    try:
+        number = int(input("Enter number: "))
+
+        for i in range(1, 11):
+            print(f"{number} × {i} = {number * i}")
+
+    except ValueError:
+        print("Enter a whole number.")
+
+
+def main():
+    while True:
+        print("\n==============================")
+        print("     PYTHON PRACTICE APP")
+        print("==============================")
+        print("1. Calculator")
+        print("2. Guessing Game")
+        print("3. Prime Checker")
+        print("4. Multiplication Table")
+        print("5. Exit")
+
+        choice = input("\nChoose an option: ")
+
+        if choice == "1":
+            calculator()
+
+        elif choice == "2":
+            guessing_game()
+
+        elif choice == "3":
+            prime_checker()
+
+        elif choice == "4":
+            multiplication_table()
+
+        elif choice == "5":
+            print("Thank you for using the app!")
+            break
+
+        else:
+            print("Invalid option.")
+
+
+if __name__ == "__main__":
+    main()
