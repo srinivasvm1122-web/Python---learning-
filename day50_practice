@@ -1,0 +1,17 @@
+name = input("Enter student name: ")
+
+maths = float(input("Enter Maths marks: "))
+science = float(input("Enter Science marks: "))
+english = float(input("Enter English marks: "))
+
+total = maths + science + english
+average = total / 3
+
+print("Student:", name)
+print("Total:", total)
+print("Average:", average)
+
+if average >= 35:
+    print("Result: Pass")
+else:
+    print("Result: Fail")
