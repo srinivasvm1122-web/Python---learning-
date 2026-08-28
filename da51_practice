@@ -1,0 +1,26 @@
+# LearnTrack AI - Daily Study Tracker
+
+student = input("Enter your name: ")
+course = input("Enter your course: ")
+topic = input("What did you study today? ")
+minutes = int(input("How many minutes did you study? "))
+completed = input("Did you complete the task? (yes/no): ")
+
+print("\n===== LearnTrack AI =====")
+print("Student:", student)
+print("Course:", course)
+print("Topic:", topic)
+print("Study Time:", minutes, "minutes")
+print("Task Completed:", completed)
+
+if completed.lower() == "yes":
+    print("🎉 Great job! Keep your learning streak!")
+else:
+    print("💪 Try to complete it tomorrow!")
+
+if minutes >= 45:
+    print("🔥 Excellent study session!")
+elif minutes >= 25:
+    print("👍 Good study session!")
+else:
+    print("📚 Try to study a little longer next time.")
