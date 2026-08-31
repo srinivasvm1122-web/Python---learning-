@@ -1,0 +1,128 @@
+class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self):
+        name = input("Enter book name: ")
+        author = input("Enter author name: ")
+
+        book = {
+            "name": name,
+            "author": author,
+            "available": True
+        }
+
+        self.books.append(book)
+        print("Book added successfully!")
+
+    def display_books(self):
+        if len(self.books) == 0:
+            print("\nNo books available.")
+        else:
+            print("\n===== AVAILABLE BOOKS =====")
+
+            for index, book in enumerate(self.books, start=1):
+                status = "Available" if book["available"] else "Issued"
+
+                print(f"\nBook {index}")
+                print("Name:", book["name"])
+                print("Author:", book["author"])
+                print("Status:", status)
+
+    def search_book(self):
+        search = input("Enter book name to search: ").lower()
+
+        found = False
+
+        for book in self.books:
+            if search in book["name"].lower():
+                print("\nBook Found!")
+                print("Name:", book["name"])
+                print("Author:", book["author"])
+                print(
+                    "Status:",
+                    "Available" if book["available"] else "Issued"
+                )
+                found = True
+
+        if not found:
+            print("Book not found!")
+
+    def issue_book(self):
+        name = input("Enter book name to issue: ").lower()
+
+        for book in self.books:
+            if book["name"].lower() == name:
+                if book["available"]:
+                    book["available"] = False
+                    print("Book issued successfully!")
+                else:
+                    print("This book is already issued!")
+                return
+
+        print("Book not found!")
+
+    def return_book(self):
+        name = input("Enter book name to return: ").lower()
+
+        for book in self.books:
+            if book["name"].lower() == name:
+                if not book["available"]:
+                    book["available"] = True
+                    print("Book returned successfully!")
+                else:
+                    print("This book was not issued!")
+                return
+
+        print("Book not found!")
+
+    def remove_book(self):
+        name = input("Enter book name to remove: ").lower()
+
+        for book in self.books:
+            if book["name"].lower() == name:
+                self.books.remove(book)
+                print("Book removed successfully!")
+                return
+
+        print("Book not found!")
+
+
+library = Library()
+
+while True:
+    print("\n========== LIBRARY MANAGEMENT SYSTEM ==========")
+    print("1. Add Book")
+    print("2. Display Books")
+    print("3. Search Book")
+    print("4. Issue Book")
+    print("5. Return Book")
+    print("6. Remove Book")
+    print("7. Exit")
+
+    choice = input("\nEnter your choice: ")
+
+    if choice == "1":
+        library.add_book()
+
+    elif choice == "2":
+        library.display_books()
+
+    elif choice == "3":
+        library.search_book()
+
+    elif choice == "4":
+        library.issue_book()
+
+    elif choice == "5":
+        library.return_book()
+
+    elif choice == "6":
+        library.remove_book()
+
+    elif choice == "7":
+        print("\nThank you for using the Library Management System!")
+        break
+
+    else:
+        print("Invalid choice! Please try again.")
