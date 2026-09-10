@@ -1,0 +1,49 @@
+books = []
+
+while True:
+    print("\n--- LIBRARY MENU ---")
+    print("1. Add Book")
+    print("2. Show Books")
+    print("3. Search Book")
+    print("4. Remove Book")
+    print("5. Exit")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        book = input("Enter book name: ")
+        books.append(book)
+        print("Book added successfully!")
+
+    elif choice == 2:
+        print("\nAvailable Books:")
+
+        if len(books) == 0:
+            print("No books available")
+        else:
+            for i, book in enumerate(books, 1):
+                print(i, ".", book)
+
+    elif choice == 3:
+        search = input("Enter book name: ")
+
+        if search in books:
+            print("Book is available")
+        else:
+            print("Book not found")
+
+    elif choice == 4:
+        book = input("Enter book to remove: ")
+
+        if book in books:
+            books.remove(book)
+            print("Book removed")
+        else:
+            print("Book not found")
+
+    elif choice == 5:
+        print("Thank you!")
+        break
+
+    else:
+        print("Invalid choice")
