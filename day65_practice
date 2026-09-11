@@ -1,0 +1,23 @@
+name = input("Enter employee name: ")
+basic = float(input("Enter basic salary: "))
+
+if basic >= 50000:
+    hra = basic * 0.20
+    da = basic * 0.10
+else:
+    hra = basic * 0.15
+    da = basic * 0.08
+
+pf = basic * 0.12
+
+gross = basic + hra + da
+net = gross - pf
+
+print("\n--- SALARY DETAILS ---")
+print("Employee :", name)
+print("Basic    :", basic)
+print("HRA      :", hra)
+print("DA       :", da)
+print("PF       :", pf)
+print("Gross    :", gross)
+print("Net Salary:", net)
