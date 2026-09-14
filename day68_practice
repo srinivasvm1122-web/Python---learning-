@@ -1,0 +1,44 @@
+total = 0
+
+while True:
+    print("\n--- RESTAURANT MENU ---")
+    print("1. Pizza - ₹200")
+    print("2. Burger - ₹100")
+    print("3. Dosa - ₹60")
+    print("4. Coffee - ₹40")
+    print("5. Finish")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        quantity = int(input("Quantity: "))
+        total += 200 * quantity
+
+    elif choice == 2:
+        quantity = int(input("Quantity: "))
+        total += 100 * quantity
+
+    elif choice == 3:
+        quantity = int(input("Quantity: "))
+        total += 60 * quantity
+
+    elif choice == 4:
+        quantity = int(input("Quantity: "))
+        total += 40 * quantity
+
+    elif choice == 5:
+        break
+
+    else:
+        print("Invalid choice")
+
+print("\n--- BILL ---")
+print("Total:", total)
+
+if total >= 500:
+    discount = total * 0.10
+    total -= discount
+    print("Discount:", discount)
+
+print("Final Amount:", total)
+print("Thank you!")
