@@ -1,0 +1,40 @@
+total = 0
+
+while True:
+    print("\n--- SHOPPING ---")
+    print("1. Add Item")
+    print("2. View Total")
+    print("3. Checkout")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        item = input("Enter item name: ")
+        price = float(input("Enter price: "))
+        quantity = int(input("Enter quantity: "))
+
+        amount = price * quantity
+        total += amount
+
+        print(item, "added")
+        print("Amount:", amount)
+
+    elif choice == 2:
+        print("Current total:", total)
+
+    elif choice == 3:
+        print("\n--- FINAL BILL ---")
+        print("Total:", total)
+
+        if total >= 1000:
+            discount = total * 0.10
+            total -= discount
+            print("Discount:", discount)
+
+        print("Final Amount:", total)
+        break
+
+    else:
+        print("Invalid choice")
+
+          
