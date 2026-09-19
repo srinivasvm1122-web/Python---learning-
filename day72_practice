@@ -1,0 +1,21 @@
+username = "admin"
+password = "python123"
+
+attempts = 3
+
+while attempts > 0:
+    user = input("Enter username: ")
+    pwd = input("Enter password: ")
+
+    if user == username and pwd == password:
+        print("\nLogin successful!")
+        print("Welcome to Python program")
+        break
+
+    else:
+        attempts -= 1
+        print("Wrong username or password")
+        print("Attempts left:", attempts)
+
+if attempts == 0:
+    print("Login failed")
