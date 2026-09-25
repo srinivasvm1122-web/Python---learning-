@@ -1,0 +1,64 @@
+balance = 5000
+
+while True:
+    print("\n===== BANK MENU =====")
+    print("1. Check Balance")
+    print("2. Deposit Money")
+    print("3. Withdraw Money")
+    print("4. Transfer Money")
+    print("5. Exit")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        print("Current Balance: ₹", balance)
+
+    elif choice == 2:
+        amount = float(input("Enter deposit amount: "))
+
+        if amount > 0:
+            balance = balance + amount
+            print("Money deposited successfully.")
+            print("New Balance: ₹", balance)
+        else:
+            print("Invalid amount.")
+
+    elif choice == 3:
+        amount = float(input("Enter withdrawal amount: "))
+
+        if amount <= 0:
+            print("Invalid amount.")
+
+        elif amount > balance:
+            print("Insufficient balance.")
+
+        else:
+            balance = balance - amount
+            print("Withdrawal successful.")
+            print("Remaining Balance: ₹", balance)
+
+    elif choice == 4:
+        amount = float(input("Enter transfer amount: "))
+
+        if amount <= 0:
+            print("Invalid amount.")
+
+        elif amount > balance:
+            print("Insufficient balance.")
+
+        else:
+            account = input("Enter receiver account number: ")
+
+            balance = balance - amount
+
+            print("Transfer successful!")
+            print("Transferred: ₹", amount)
+            print("To Account:", account)
+            print("Remaining Balance: ₹", balance)
+
+    elif choice == 5:
+        print("Thank you for using our bank.")
+        break
+
+    else:
+        print("Invalid choice.")
