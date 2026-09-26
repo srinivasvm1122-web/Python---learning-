@@ -1,0 +1,45 @@
+score = 0
+
+print("================================")
+print("        PYTHON QUIZ GAME")
+print("================================")
+
+questions = [
+    ["What is the output function in Python?", "print"],
+    ["What symbol is used for comments?", "#"],
+    ["What is 10 + 20?", "30"],
+    ["Which keyword is used for a loop?", "for"],
+    ["Which data type stores multiple values?", "list"]
+]
+
+for i in range(len(questions)):
+    print("\nQuestion", i + 1)
+    print(questions[i][0])
+
+    answer = input("Your answer: ")
+
+    if answer.lower() == questions[i][1].lower():
+        print("Correct!")
+        score += 1
+    else:
+        print("Wrong!")
+        print("Correct answer:", questions[i][1])
+
+print("\n================================")
+print("           RESULT")
+print("================================")
+
+print("Total Questions:", len(questions))
+print("Correct Answers:", score)
+print("Wrong Answers:", len(questions) - score)
+
+percentage = (score / len(questions)) * 100
+
+print("Percentage:", percentage, "%")
+
+if percentage >= 80:
+    print("Excellent!")
+elif percentage >= 50:
+    print("Good job!")
+else:
+    print("Keep practicing!")
