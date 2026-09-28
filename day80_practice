@@ -1,0 +1,73 @@
+cart = []
+
+while True:
+    print("\n===== SHOPPING CART =====")
+    print("1. Add Product")
+    print("2. View Cart")
+    print("3. Remove Product")
+    print("4. Calculate Total")
+    print("5. Checkout")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        name = input("Enter product name: ")
+        price = float(input("Enter price: "))
+        quantity = int(input("Enter quantity: "))
+
+        product = {
+            "name": name,
+            "price": price,
+            "quantity": quantity
+        }
+
+        cart.append(product)
+        print("Product added!")
+
+    elif choice == 2:
+        if not cart:
+            print("Cart is empty.")
+        else:
+            print("\n--- YOUR CART ---")
+
+            for product in cart:
+                amount = product["price"] * product["quantity"]
+
+                print("Product:", product["name"])
+                print("Price:", product["price"])
+                print("Quantity:", product["quantity"])
+                print("Amount:", amount)
+                print("----------------")
+
+    elif choice == 3:
+        name = input("Enter product to remove: ")
+
+        for product in cart:
+            if product["name"].lower() == name.lower():
+                cart.remove(product)
+                print("Product removed.")
+                break
+        else:
+            print("Product not found.")
+
+    elif choice == 4:
+        total = 0
+
+        for product in cart:
+            total += product["price"] * product["quantity"]
+
+        print("Cart Total: ₹", total)
+
+    elif choice == 5:
+        total = 0
+
+        for product in cart:
+            total += product["price"] * product["quantity"]
+
+        print("\n===== FINAL BILL =====")
+        print("Total Amount: ₹", total)
+        print("Thank you for shopping!")
+        break
+
+    else:
+        print("Invalid choice.")
