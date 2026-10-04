@@ -1,0 +1,84 @@
+tickets = []
+
+while True:
+    print("\n===== BUS TICKET BOOKING =====")
+    print("1. Book Ticket")
+    print("2. Show Tickets")
+    print("3. Search Passenger")
+    print("4. Cancel Ticket")
+    print("5. Exit")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        name = input("Enter passenger name: ")
+        age = int(input("Enter age: "))
+        destination = input("Enter destination: ")
+        seats = int(input("Enter number of seats: "))
+
+        price = seats * 300
+
+        ticket = {
+            "name": name,
+            "age": age,
+            "destination": destination,
+            "seats": seats,
+            "price": price
+        }
+
+        tickets.append(ticket)
+
+        print("\nTicket booked successfully!")
+        print("Passenger:", name)
+        print("Destination:", destination)
+        print("Seats:", seats)
+        print("Total price: ₹", price)
+
+    elif choice == 2:
+        if not tickets:
+            print("No tickets booked.")
+        else:
+            print("\n===== BOOKED TICKETS =====")
+
+            for i, ticket in enumerate(tickets, 1):
+                print("\nTicket", i)
+                print("Name:", ticket["name"])
+                print("Age:", ticket["age"])
+                print("Destination:", ticket["destination"])
+                print("Seats:", ticket["seats"])
+                print("Price: ₹", ticket["price"])
+
+    elif choice == 3:
+        name = input("Enter passenger name: ")
+        found = False
+
+        for ticket in tickets:
+            if ticket["name"].lower() == name.lower():
+                print("\nPassenger Found")
+                print("Name:", ticket["name"])
+                print("Destination:", ticket["destination"])
+                print("Seats:", ticket["seats"])
+                print("Price: ₹", ticket["price"])
+                found = True
+                break
+
+        if not found:
+            print("Passenger not found.")
+
+    elif choice == 4:
+        name = input("Enter passenger name: ")
+
+        for ticket in tickets:
+            if ticket["name"].lower() == name.lower():
+                tickets.remove(ticket)
+                print("Ticket cancelled successfully!")
+                break
+        else:
+            print("Ticket not found.")
+
+    elif choice == 5:
+        print("Thank you!")
+        break
+
+    else:
+        print("Invalid choice.")
