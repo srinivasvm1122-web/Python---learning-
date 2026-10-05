@@ -1,0 +1,70 @@
+customers = {}
+
+while True:
+    print("\n===== MOBILE RECHARGE =====")
+    print("1. Add Customer")
+    print("2. Recharge")
+    print("3. Check Balance")
+    print("4. Customer Details")
+    print("5. Exit")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        phone = input("Enter mobile number: ")
+
+        if phone in customers:
+            print("Customer already exists.")
+        else:
+            name = input("Enter customer name: ")
+
+            customers[phone] = {
+                "name": name,
+                "balance": 0
+            }
+
+            print("Customer added successfully!")
+
+    elif choice == 2:
+        phone = input("Enter mobile number: ")
+
+        if phone in customers:
+            amount = float(input("Enter recharge amount: "))
+
+            if amount > 0:
+                customers[phone]["balance"] += amount
+                print("Recharge successful!")
+                print("Balance:", customers[phone]["balance"])
+            else:
+                print("Invalid amount.")
+        else:
+            print("Customer not found.")
+
+    elif choice == 3:
+        phone = input("Enter mobile number: ")
+
+        if phone in customers:
+            print(
+                "Balance: ₹",
+                customers[phone]["balance"]
+            )
+        else:
+            print("Customer not found.")
+
+    elif choice == 4:
+        phone = input("Enter mobile number: ")
+
+        if phone in customers:
+            print("\n===== CUSTOMER DETAILS =====")
+            print("Name:", customers[phone]["name"])
+            print("Mobile:", phone)
+            print("Balance: ₹", customers[phone]["balance"])
+        else:
+            print("Customer not found.")
+
+    elif choice == 5:
+        print("Thank you!")
+        break
+
+    else:
+        print("Invalid choice.")
