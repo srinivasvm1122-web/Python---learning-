@@ -1,0 +1,87 @@
+employees = []
+
+while True:
+    print("\n===== EMPLOYEE PAYROLL =====")
+    print("1. Add Employee")
+    print("2. Show Employees")
+    print("3. Calculate Salary")
+    print("4. Search Employee")
+    print("5. Exit")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        name = input("Enter employee name: ")
+        department = input("Enter department: ")
+        basic = float(input("Enter basic salary: "))
+
+        employee = {
+            "name": name,
+            "department": department,
+            "basic": basic
+        }
+
+        employees.append(employee)
+        print("Employee added successfully!")
+
+    elif choice == 2:
+        if not employees:
+            print("No employees found.")
+        else:
+            for employee in employees:
+                print("\nName:", employee["name"])
+                print("Department:", employee["department"])
+                print("Basic Salary:", employee["basic"])
+
+    elif choice == 3:
+        name = input("Enter employee name: ")
+        found = False
+
+        for employee in employees:
+            if employee["name"].lower() == name.lower():
+
+                basic = employee["basic"]
+                hra = basic * 0.20
+                da = basic * 0.10
+                pf = basic * 0.12
+
+                gross = basic + hra + da
+                net = gross - pf
+
+                print("\n===== SALARY SLIP =====")
+                print("Employee:", employee["name"])
+                print("Basic:", basic)
+                print("HRA:", hra)
+                print("DA:", da)
+                print("PF:", pf)
+                print("Gross Salary:", gross)
+                print("Net Salary:", net)
+
+                found = True
+                break
+
+        if not found:
+            print("Employee not found.")
+
+    elif choice == 4:
+        name = input("Enter employee name: ")
+        found = False
+
+        for employee in employees:
+            if employee["name"].lower() == name.lower():
+                print("\nEmployee Found")
+                print("Name:", employee["name"])
+                print("Department:", employee["department"])
+                print("Salary:", employee["basic"])
+                found = True
+                break
+
+        if not found:
+            print("Employee not found.")
+
+    elif choice == 5:
+        print("Program ended.")
+        break
+
+    else:
+        print("Invalid choice.")
