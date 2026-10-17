@@ -1,0 +1,82 @@
+
+students = []
+
+def add_student():
+    name = input("Enter student name: ")
+    roll_no = input("Enter roll number: ")
+
+    marks = []
+    for i in range(1, 4):
+        mark = float(input(f"Enter subject {i} marks (out of 100): "))
+        marks.append(mark)
+
+    student = {
+        "name": name,
+        "roll_no": roll_no,
+        "marks": marks
+    }
+
+    students.append(student)
+    print("Student added successfully!\n")
+
+
+def display_students():
+    if not students:
+        print("No student records found.\n")
+        return
+
+    for student in students:
+        total = sum(student["marks"])
+        percentage = total / len(student["marks"])
+
+        if all(mark >= 35 for mark in student["marks"]):
+            result = "PASS"
+        else:
+            result = "FAIL"
+
+        print("\n----------------------------")
+        print("Name:", student["name"])
+        print("Roll Number:", student["roll_no"])
+        print("Marks:", student["marks"])
+        print("Total:", total, "/ 300")
+        print("Percentage:", round(percentage, 2), "%")
+        print("Result:", result)
+        print("----------------------------\n")
+
+
+def search_student():
+    roll_no = input("Enter roll number to search: ")
+
+    for student in students:
+        if student["roll_no"] == roll_no:
+            print("Student found:", student["name"])
+            print("Marks:", student["marks"])
+            return
+
+    print("Student not found.\n")
+
+
+def main():
+    while True:
+        print("===== STUDENT MANAGEMENT SYSTEM =====")
+        print("1. Add Student")
+        print("2. Display All Students")
+        print("3. Search Student")
+        print("4. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            add_student()
+        elif choice == "2":
+            display_students()
+        elif choice == "3":
+            search_student()
+        elif choice == "4":
+            print("Thank you for using the system!")
+            break
+        else:
+            print("Invalid choice. Try again.\n")
+
+
+main()
