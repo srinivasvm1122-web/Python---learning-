@@ -1,0 +1,31 @@
+
+balance = 5000
+
+print("1. Check Balance")
+print("2. Deposit")
+print("3. Withdraw")
+
+choice = input("Choose option: ")
+
+if choice == "1":
+    print("Balance: ₹", balance)
+
+elif choice == "2":
+    amount = float(input("Deposit amount: "))
+    if amount > 0:
+        balance += amount
+    print("Balance: ₹", balance)
+
+elif choice == "3":
+    amount = float(input("Withdrawal amount: "))
+    if 0 < amount <= balance:
+        balance -= amount
+        print("Withdrawal successful!")
+    else:
+        print("Invalid amount or insufficient balance")
+
+    print("Balance: ₹", balance)
+
+else:
+    print("Invalid choice")
+
