@@ -1,0 +1,9 @@
+
+price = float(input("Enter price: "))
+discount = float(input("Enter discount %: "))
+
+saved = price * discount / 100
+final = price - saved
+
+print("You saved:", saved)
+print("Final price:", final)
